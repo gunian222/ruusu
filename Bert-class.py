@@ -1,8 +1,6 @@
 from datasets import load_dataset  # 导入情感分析数据集
 import pandas as pd
 from sentry_sdk.utils import epoch
-import shutil
-shutil.move('C:../dataset/train.csv', 'D:../dataset/train.csv')
 
 dataset = load_dataset("fancyzhx/ag_news")
 print(dataset["train"][0])
@@ -113,7 +111,7 @@ def predict(texts):
     preds = torch.argmax(outputs.logits, dim=-1)
     return preds.cpu().numpy()
 
-# 测试预测
+
 labels = ["World", "Sports", "Business", "Sci/Tech"]
 sample_texts = [
     "The stock market crashed yesterday amid fears of inflation.",
