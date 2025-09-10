@@ -1,8 +1,7 @@
 from datasets import load_dataset  # 导入情感分析数据集
 import pandas as pd
 from sentry_sdk.utils import epoch
-import shutil
-shutil.move('C:../dataset/train.csv', 'D:../dataset/train.csv')
+
 
 dataset = load_dataset("fancyzhx/ag_news")
 print(dataset["train"][0])
